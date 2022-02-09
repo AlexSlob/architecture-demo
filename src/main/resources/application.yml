@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: metadata
+  server:
+    port: 8080
+    host: localhost
+  http:
+    client:
+      exception-on-error-status: false
+
+jackson:
+  date-format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+  serialization:
+    writeDatesAsTimestamps: false
+  serialization-inclusion: non_null
+
+datasources:
+  default:
+    url: jdbc:h2:mem:default;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: ""
+    driverClassName: org.h2.Driver
+
+
+flyway:
+  datasources:
+    default:
+      enabled: true
+      baseline-on-migrate: true
+      baseline-version: 0
